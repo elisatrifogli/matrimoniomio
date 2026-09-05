@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco ed Elisa - 3 Aprile 2027 | Save The Date</title>
+  <meta name="description" content="Matrimonio di Marco ed Elisa. Sabato 3 Aprile 2027 - Roma. Chiesa di Santa Maria Goretti e Ricevimento. Salva la data e conferma la presenza." />
+  
+  <!-- Google Fonts: Cormorant Garamond & Calligraphy Scripts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Italianno&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="hero">
+    <div class="hero-backdrop-container">
+      <div class="hero-image-wrapper" id="heroImageWrapper">
+        <img src="Immagine 08-08-26 - 12.32.PNG" alt="Marco ed Elisa - Partecipazione di Matrimonio" class="hero-custom-img" id="heroCustomImg" />
+        <div class="hero-overlay"></div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <!-- Monogram M E with exact Olive Branch from the invitation -->
+      <div class="monogram-badge">
+        <span class="mono-letter">M</span>
+        <svg class="mono-olive-branch" viewBox="0 0 64 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Main organic curved stem -->
+          <path d="M32 80 C32 60 30 35 34 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          
+          <!-- Bottom Left Leaf -->
+          <path d="M31 62 C23 60 16 54 18 45 C25 46 30 54 31 62 Z" fill="none" stroke="currentColor" stroke-width="1.3" />
+          <path d="M31 62 C24 53 20 48 18 45" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" />
+
+          <!-- Bottom Right Leaf -->
+          <path d="M31 52 C39 50 46 44 44 35 C37 36 32 44 31 52 Z" fill="none" stroke="currentColor" stroke-width="1.3" />
+          <path d="M31 52 C38 43 42 38 44 35" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" />
+
+          <!-- Middle Left Leaf -->
+          <path d="M32 42 C22 39 17 31 21 23 C27 25 31 34 32 42 Z" fill="none" stroke="currentColor" stroke-width="1.3" />
+          <path d="M32 42 C26 33 23 27 21 23" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" />
+
+          <!-- Middle Right Leaf -->
+          <path d="M33 33 C42 29 48 22 45 13 C38 15 34 24 33 33 Z" fill="none" stroke="currentColor" stroke-width="1.3" />
+          <path d="M33 33 C39 23 43 17 45 13" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" />
+
+          <!-- Upper Left Leaf -->
+          <path d="M33 22 C26 17 23 9 27 3 C33 6 34 14 33 22 Z" fill="none" stroke="currentColor" stroke-width="1.3" />
+          <path d="M33 22 C29 13 27 7 27 3" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" />
+
+          <!-- Top Terminal Leaf -->
+          <path d="M34 10 C36 4 39 1 40 1 C40 3 37 8 34 10 Z" fill="none" stroke="currentColor" stroke-width="1.3" />
+
+          <!-- Small delicate olive berries -->
+          <circle cx="28" cy="56" r="2.2" fill="currentColor" opacity="0.85"/>
+          <circle cx="37" cy="46" r="2.2" fill="currentColor" opacity="0.85"/>
+          <circle cx="27" cy="36" r="2" fill="currentColor" opacity="0.85"/>
+        </svg>
+        <span class="mono-letter">E</span>
+      </div>
+
+      <!-- Names in Shelly Script / Cursive -->
+      <h1 class="couple-names script-font">Marco e Elisa</h1>
+
+      <p class="announcement-subtitle">
+        GRATI A DIO<br />
+        <span class="announcement-strong">ANNUNCIANO CON GIOIA IL LORO MATRIMONIO</span>
+      </p>
+
+      <div class="wedding-date-tag">
+        <span class="date-day">Sabato</span>
+        <span class="date-full">3 Aprile 2027</span>
+        <span class="date-city">• Roma •</span>
+      </div>
+
+      <!-- Countdown with "Save the date" -->
+      <div class="countdown-card" id="countdownCard">
+        <div class="countdown-header">
+          <span>Save the date</span>
+        </div>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span class="countdown-number" id="countdownDays">00</span>
+            <span class="countdown-label">Giorni</span>
+          </div>
+          <div class="countdown-divider">:</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="countdownHours">00</span>
+            <span class="countdown-label">Ore</span>
+          </div>
+          <div class="countdown-divider">:</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="countdownMinutes">00</span>
+            <span class="countdown-label">Minuti</span>
+          </div>
+          <div class="countdown-divider">:</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="countdownSeconds">00</span>
+            <span class="countdown-label">Secondi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single Action: Native Add to Calendar -->
+      <div class="hero-actions">
+        <button type="button" id="addToCalendarBtn" class="btn btn-primary btn-lg" title="Aggiungi al calendario del tuo smartphone">
+          <i class="fa-regular fa-calendar-plus"></i> Aggiungi al Calendario
+        </button>
+      </div>
+
+      <a href="#timeline" class="scroll-down-indicator" aria-label="Scorri in basso">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Vertical Timeline / Roadmap Section -->
+    <section class="section timeline-section" id="timeline">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Programma</span>
+          <h2 class="section-title">Ordine del Giorno</h2>
+          <div class="divider-olive"></div>
+        </div>
+
+        <!-- Vertical Roadmap -->
+        <div class="timeline-roadmap">
+          <div class="timeline-line"></div>
+
+          <!-- Step 1: Cerimonia -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-church"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-time"><i class="fa-regular fa-clock"></i> Ore 15:00</div>
+              <h3 class="timeline-title">La Cerimonia</h3>
+              <p class="timeline-place">
+                <strong>Chiesa di Santa Maria Goretti</strong><br />
+                Via di Santa Maria Goretti, 29 - Roma
+              </p>
+              <div class="timeline-actions">
+                <a href="https://maps.google.com/?q=Chiesa+di+Santa+Maria+Goretti+Via+di+Santa+Maria+Goretti+29+Roma" target="_blank" rel="noopener noreferrer" class="btn-link-map">
+                  <i class="fa-solid fa-location-dot"></i> Mappa Chiesa
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Ricevimento -->
+          <div class="timeline-item timeline-item-alt">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-time"><i class="fa-regular fa-clock"></i> Ore 17:30</div>
+              <h3 class="timeline-title">Il Ricevimento</h3>
+              <p class="timeline-place">
+                <strong id="timelineLocationName">Villa Fravili</strong><br />
+                <span id="timelineLocationAddr">Via Quarto di Conca, 137 - Fonte Nuova (RM)</span>
+              </p>
+              <div class="timeline-actions">
+                <a href="#luoghi" class="btn-link-map">
+                  <i class="fa-solid fa-map-pin"></i> Dettagli & Mappa
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Cena -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-time"><i class="fa-regular fa-clock"></i> Ore 19:30</div>
+              <h3 class="timeline-title">Cena & Brindisi</h3>
+              <p class="timeline-place">Banchetto e festeggiamenti insieme.</p>
+            </div>
+          </div>
+
+          <!-- Step 4: Torta & Party -->
+          <div class="timeline-item timeline-item-alt">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-cake-candles"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-time"><i class="fa-regular fa-clock"></i> Ore 22:30</div>
+              <h3 class="timeline-title">Taglio Torta & Party</h3>
+              <p class="timeline-place">Buffet dei dolci, musica e open bar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations Cards & Interactive Maps Section -->
+    <section class="section locations-section" id="luoghi">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Location</span>
+          <h2 class="section-title">I Luoghi</h2>
+          <div class="divider-olive"></div>
+        </div>
+
+        <div class="locations-grid">
+          <!-- Card Chiesa -->
+          <div class="location-card">
+            <div class="loc-card-header">
+              <div class="loc-icon-bubble">
+                <i class="fa-solid fa-church"></i>
+              </div>
+              <div class="loc-header-text">
+                <span class="loc-type">Cerimonia • Ore 15:00</span>
+                <h3 class="loc-name">Chiesa di Santa Maria Goretti</h3>
+              </div>
+            </div>
+            <div class="loc-card-body">
+              <div class="loc-info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <strong>Indirizzo</strong>
+                  <p>Via di Santa Maria Goretti, 29 - 00199 Roma (RM)</p>
+                </div>
+              </div>
+
+              <!-- Map Embed -->
+              <div class="map-embed-wrapper">
+                <iframe 
+                  title="Mappa Chiesa Santa Maria Goretti"
+                  src="https://maps.google.com/maps?q=Chiesa+di+Santa+Maria+Goretti+Via+di+Santa+Maria+Goretti+29+Roma&t=&z=16&ie=UTF8&iwloc=near&output=embed" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+
+              <div class="loc-card-actions">
+                <a href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+Santa+Maria+Goretti+Roma+Via+di+Santa+Maria+Goretti+29" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i class="fa-solid fa-diamond-turn-right"></i> Google Maps
+                </a>
+                <a href="https://waze.com/ul?q=Chiesa%20di%20Santa%20Maria%20Goretti%20Roma" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-waze"></i> Waze
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Location Ricevimento -->
+          <div class="location-card">
+            <div class="loc-card-header loc-header-alt">
+              <div class="loc-icon-bubble">
+                <i class="fa-solid fa-glass-cheers"></i>
+              </div>
+              <div class="loc-header-text">
+                <span class="loc-type">Ricevimento • Dalle 17:30</span>
+                <h3 class="loc-name" id="locationTitleDisplay">Villa Fravili</h3>
+              </div>
+            </div>
+            <div class="loc-card-body">
+              <div class="loc-info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <strong>Indirizzo</strong>
+                  <p id="locationAddressDisplay">Via Quarto di Conca, 137 - 00013 Fonte Nuova (RM)</p>
+                </div>
+              </div>
+
+              <!-- Map Embed -->
+              <div class="map-embed-wrapper">
+                <iframe 
+                  id="locationIframe"
+                  title="Mappa Villa Fravili Fonte Nuova"
+                  src="https://maps.google.com/maps?q=Villa+Fravili+Fonte+Nuova&t=&z=15&ie=UTF8&iwloc=near&output=embed" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+
+              <div class="loc-card-actions">
+                <a href="https://maps.app.goo.gl/nqCkzXTLR4yenpoPA" id="locationMapsLink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i class="fa-solid fa-diamond-turn-right"></i> Google Maps
+                </a>
+                <a href="https://ul.waze.com/ul?venue_id=8257956.82710633.17765473&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" id="locationWazeLink" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-waze"></i> Waze
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minimal & Synthetic RSVP Section -->
+    <section class="section rsvp-section" id="rsvp">
+      <div class="container">
+        <div class="rsvp-wrapper">
+          <div class="text-center">
+            <span class="section-tag">R.S.V.P.</span>
+            <h2 class="section-title">Conferma Presenza</h2>
+            <p class="section-subtitle">Vi preghiamo di confermare entro il <strong>15 Febbraio 2027</strong></p>
+            <div class="divider-olive"></div>
+          </div>
+
+          <form id="rsvpForm" class="rsvp-form" novalidate>
+            <!-- Presenza Toggle Minimal -->
+            <div class="presence-options">
+              <label class="presence-option presence-yes">
+                <input type="radio" name="presence" value="SI" checked required />
+                <div class="presence-box">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span>Sì, ci sarò</span>
+                </div>
+              </label>
+              <label class="presence-option presence-no">
+                <input type="radio" name="presence" value="NO" required />
+                <div class="presence-box">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                  <span>Non potrò esserci</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Due campi separati per Nome e Cognome -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guestFirstName" class="form-label">Nome <span class="required">*</span></label>
+                <input type="text" id="guestFirstName" name="firstName" class="form-control" placeholder="Es. Mario" required />
+              </div>
+              <div class="form-group">
+                <label for="guestLastName" class="form-label">Cognome <span class="required">*</span></label>
+                <input type="text" id="guestLastName" name="lastName" class="form-control" placeholder="Es. Rossi" required />
+              </div>
+            </div>
+
+            <!-- Unico campo aperto minimale per intolleranze / allergie / note -->
+            <div class="form-group" id="dietaryNotesGroup">
+              <label for="guestNotes" class="form-label">Allergie, intolleranze o note alimentari</label>
+              <textarea id="guestNotes" name="notes" class="form-control" rows="3" placeholder="Scrivi qui eventuali allergie, intolleranze"></textarea>
+            </div>
+
+            <!-- Submit Button Unico -->
+            <div class="form-submit-wrapper">
+              <button type="submit" id="rsvpSubmitBtn" class="btn btn-primary btn-block btn-lg">
+                <i class="fa-solid fa-paper-plane"></i> Invia Conferma
+              </button>
+            </div>
+          </form>
+
+          <!-- Success Alert Card -->
+          <div id="rsvpSuccessCard" class="rsvp-success-card" style="display: none;">
+            <div class="success-icon-wrap">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3 class="success-title">Grazie!</h3>
+            <p class="success-msg" id="successCustomMsg">
+              La tua risposta è stata registrata con successo.
+            </p>
+            <div class="mt-4">
+              <button type="button" id="rsvpResetViewBtn" class="btn btn-outline btn-sm">
+                Invia un'altra risposta
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gift / IBAN Section -->
+    <section class="section gift-section" id="regalo">
+      <div class="container">
+        <div class="gift-card text-center">
+          <span class="section-tag">Lista Nozze</span>
+          <h2 class="section-title">Il Nostro Viaggio</h2>
+          <div class="divider-olive"></div>
+          <p class="gift-text">
+            Il regalo più grande sarà festeggiare insieme.<br />
+            Per chi desidera contribuire al nostro viaggio di nozze:
+          </p>
+
+          <div class="iban-box-wrapper">
+            <div class="iban-card">
+              <div class="iban-header">
+                <span class="iban-label"><i class="fa-solid fa-building-columns"></i> Bonifico Bancario</span>
+                <span class="iban-beneficiary">Intestato a: <strong>Marco Linardi</strong></span>
+              </div>
+              <div class="iban-code-row">
+                <code class="iban-code" id="ibanCodeText">IT00 X000 0000 0000 0000 0000 000</code>
+                <button type="button" id="copyIbanBtn" class="btn btn-copy" title="Copia IBAN negli appunti">
+                  <i class="fa-regular fa-copy"></i> <span id="copyBtnLabel">Copia IBAN</span>
+                </button>
+              </div>
+              <div class="iban-footer">
+                <span>Causale: <em>Matrimonio Marco ed Elisa</em></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photos / Memories Section -->
+    <section class="section photos-section" id="foto">
+      <div class="container">
+        <div class="gift-card text-center">
+          <span class="section-tag">Foto & Ricordi</span>
+          <h2 class="section-title">I Vostri Scatti</h2>
+          <div class="divider-olive"></div>
+          <p class="gift-text">
+            Avete scattato foto o video durante il nostro matrimonio?<br />
+            Condivideteli con noi per raccogliere insieme i ricordi più belli!
+          </p>
+
+          <div class="mt-4">
+            <a href="https://drive.google.com/drive/folders/12u2mDwecdQt5g-eXPgKsItJpRG5t79-J?usp=sharing" id="photosDriveLink" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-cloud-arrow-up"></i> Carica le tue Foto su Google Drive
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <div class="footer-monogram">
+        <span class="script-font footer-names">Marco e Elisa</span>
+      </div>
+      <p class="footer-date">3 Aprile 2027 • Roma</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification System -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="polite">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span class="toast-message" id="toastMessage">Testo di notifica</span>
+  </div>
+
+  <!-- JavaScript Configuration & Logic -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
