@@ -889,6 +889,19 @@ textarea.form-control {
   margin: 0 auto 1.2rem;
 }
 
+/* Variante della stessa bolla per lo stato di errore del modulo RSVP */
+.success-icon-error {
+  background: #fdf1f4;
+  color: #b4566d;
+}
+
+.rsvp-error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
 .success-title {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
@@ -1065,6 +1078,231 @@ textarea.form-control {
 .toast-icon {
   color: var(--color-forest);
   font-size: 1.15rem;
+}
+
+/* --- Scorciatoia flottante al modulo RSVP --- */
+.floating-rsvp {
+  position: fixed;
+  left: 50%;
+  bottom: 1.15rem;
+  z-index: 900;              /* sotto il toast, che ha 2000 */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  background: var(--color-forest);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 26px rgba(39, 56, 43, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 160%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, background 0.25s ease;
+}
+
+.floating-rsvp.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.floating-rsvp:hover,
+.floating-rsvp:focus-visible {
+  background: var(--color-forest-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-rsvp {
+    transition: opacity 0.2s linear;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* --- Lista persone del modulo RSVP (una scheda = una riga nel foglio) --- */
+.guest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.guest-card {
+  border: 1px solid var(--color-sage-border);
+  border-radius: var(--radius-md);
+  background: var(--color-paper);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.guest-card.is-open {
+  border-color: var(--color-sage);
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(39, 56, 43, 0.07);
+}
+
+.guest-card.has-error {
+  border-color: #c94a4a;
+}
+
+.guest-head {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Intestazione cliccabile: apre e chiude la scheda */
+.guest-toggle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-sans);
+  color: var(--color-forest-dark);
+  min-height: 52px;               /* area di tocco comoda su telefono */
+}
+
+.guest-chevron {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  color: var(--color-sage);
+  transition: transform 0.25s ease;
+}
+
+.guest-card.is-open .guest-chevron {
+  transform: rotate(180deg);
+}
+
+.guest-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.guest-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guest-summary {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-subtle);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guest-summary.is-absent {
+  color: #a33232;
+}
+
+.guest-summary.is-incomplete {
+  color: #b07d2a;
+}
+
+.guest-remove {
+  flex: 0 0 auto;
+  width: 46px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-subtle);
+  font-size: 0.95rem;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.guest-remove:hover,
+.guest-remove:focus-visible {
+  color: #c94a4a;
+  background: #fdf4f4;
+}
+
+.guest-body {
+  padding: 0.25rem 1rem 1rem;
+  border-top: 1px solid var(--color-sage-border);
+}
+
+/* Dentro la scheda gli spazi sono piu' compatti: sul telefono conta ogni pixel.
+   Le due regole grid-template-columns servono a battere per specificita' le
+   media query globali, che sotto i 540px/860px metterebbero in colonna sia le
+   due scelte di presenza sia Nome/Cognome, raddoppiando l'altezza del modulo
+   proprio dove lo spazio scarseggia. */
+.guest-body .presence-options {
+  grid-template-columns: 1fr 1fr;
+  margin: 0.85rem 0 0.9rem;
+  gap: 0.5rem;
+}
+
+.guest-body .presence-box {
+  padding: 0.7rem 0.5rem;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+}
+
+.guest-body .form-row {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.guest-body .form-group {
+  margin-bottom: 0.8rem;
+}
+
+.guest-body .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.guest-body .form-label {
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.guest-body .form-control {
+  padding: 0.65rem 0.8rem;
+}
+
+/* --- Pulsante "Conferma per un'altra persona" --- */
+.btn-add-guest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.8rem;
+  padding: 0.85rem 1rem;
+  border: 1.5px dashed var(--color-sage-border);
+  border-radius: var(--radius-md);
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-forest);
+  transition: var(--transition);
+}
+
+.btn-add-guest:hover,
+.btn-add-guest:focus-visible {
+  border-color: var(--color-forest);
+  border-style: solid;
+  background: var(--color-sage-pale);
+}
+
+.btn-add-guest[hidden] {
+  display: none;
 }
 
 /* --- Responsive Media Queries --- */

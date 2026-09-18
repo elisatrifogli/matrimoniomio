@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagina non trovata | Marco e Elisa</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#36513d" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Italianno&display=swap" rel="stylesheet" />
+
+  <!-- Stile inline: la pagina 404 puo' essere servita da un percorso qualsiasi,
+       quindi non si appoggia a style.css con un link relativo che potrebbe rompersi. -->
+  <style>
+    :root {
+      --forest: #36513d;
+      --forest-dark: #27382b;
+      --sage: #7f9f87;
+      --paper: #fbf9f5;
+      --text-muted: #626c64;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+      background: var(--paper);
+      color: var(--forest-dark);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      text-align: center;
+    }
+    .wrap { max-width: 520px; }
+    .branch { width: 56px; height: 56px; color: var(--sage); margin-bottom: 24px; }
+    h1 {
+      font-family: 'Italianno', cursive;
+      font-size: clamp(3rem, 12vw, 4.5rem);
+      font-weight: 400;
+      margin: 0 0 8px;
+      color: var(--forest);
+      line-height: 1.1;
+    }
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--sage);
+      margin: 0 auto 28px;
+    }
+    a.home {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 999px;
+      background: var(--forest);
+      color: var(--paper);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.25s ease;
+    }
+    a.home:hover, a.home:focus { background: var(--forest-dark); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <svg class="branch" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path d="M15.5 29C15.5 21 15 13 18 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <g fill="currentColor">
+        <ellipse cx="11" cy="21.5" rx="4.6" ry="2.3" transform="rotate(-28 11 21.5)"/>
+        <ellipse cx="20.6" cy="17.5" rx="4.6" ry="2.3" transform="rotate(28 20.6 17.5)"/>
+        <ellipse cx="11.8" cy="13" rx="4.4" ry="2.2" transform="rotate(-28 11.8 13)"/>
+        <ellipse cx="21.4" cy="9" rx="4.4" ry="2.2" transform="rotate(28 21.4 9)"/>
+        <circle cx="16.6" cy="24.6" r="1.5"/>
+      </g>
+    </svg>
+
+    <h1>Pagina non trovata</h1>
+    <div class="divider"></div>
+    <p>Questa pagina non esiste, ma il matrimonio sì.<br />Torniamo all'invito?</p>
+
+    <a class="home" href="https://elisatrifogli.github.io/matrimoniomio/">Vai al sito</a>
+  </div>
+</body>
+</html>

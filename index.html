@@ -3,9 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marco ed Elisa - 3 Aprile 2027 | Save The Date</title>
-  <meta name="description" content="Matrimonio di Marco ed Elisa. Sabato 3 Aprile 2027 - Roma. Chiesa di Santa Maria Goretti e Ricevimento. Salva la data e conferma la presenza." />
-  
+  <title>Marco e Elisa - 3 Aprile 2027 | Save The Date</title>
+  <meta name="description" content="Matrimonio di Marco e Elisa. Sabato 3 Aprile 2027 - Roma. Chiesa di Santa Maria Goretti e ricevimento a Villa Fravili. Salva la data e conferma la presenza." />
+
+  <!-- Il sito si raggiunge dal QR code e da WhatsApp: non serve che sia indicizzato sui motori di ricerca -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Anteprima per WhatsApp, Facebook, Telegram, iMessage -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Marco e Elisa" />
+  <meta property="og:title" content="Marco e Elisa - Sabato 3 Aprile 2027" />
+  <meta property="og:description" content="Grati a Dio annunciano con gioia il loro matrimonio. Roma, Chiesa di Santa Maria Goretti. Conferma la tua presenza." />
+  <meta property="og:url" content="https://elisatrifogli.github.io/matrimoniomio/" />
+  <meta property="og:image" content="https://elisatrifogli.github.io/matrimoniomio/anteprima-social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="628" />
+  <meta property="og:image:alt" content="Partecipazione di matrimonio di Marco e Elisa, 3 aprile 2027" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Icone -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#36513d" />
+
   <!-- Google Fonts: Cormorant Garamond & Calligraphy Scripts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +44,7 @@
   <header class="hero-section" id="hero">
     <div class="hero-backdrop-container">
       <div class="hero-image-wrapper" id="heroImageWrapper">
-        <img src="Immagine 08-08-26 - 12.32.PNG" alt="Marco ed Elisa - Partecipazione di Matrimonio" class="hero-custom-img" id="heroCustomImg" />
+        <img src="partecipazione.jpg" alt="" aria-hidden="true" width="1200" height="1200" fetchpriority="high" class="hero-custom-img" id="heroCustomImg" />
         <div class="hero-overlay"></div>
       </div>
     </div>
@@ -68,7 +89,7 @@
       </div>
 
       <!-- Names in Shelly Script / Cursive -->
-      <h1 class="couple-names script-font">Marco e Elisa</h1>
+      <h1 class="couple-names script-font" id="coupleNames">Marco e Elisa</h1>
 
       <p class="announcement-subtitle">
         GRATI A DIO<br />
@@ -142,14 +163,14 @@
               <i class="fa-solid fa-church"></i>
             </div>
             <div class="timeline-card">
-              <div class="timeline-time"><i class="fa-regular fa-clock"></i> Ore 15:00</div>
+              <div class="timeline-time"><i class="fa-regular fa-clock"></i> <span id="timelineChurchTime">Ore 15:00</span></div>
               <h3 class="timeline-title">La Cerimonia</h3>
               <p class="timeline-place">
-                <strong>Chiesa di Santa Maria Goretti</strong><br />
-                Via di Santa Maria Goretti, 29 - Roma
+                <strong id="timelineChurchName">Chiesa di Santa Maria Goretti</strong><br />
+                <span id="timelineChurchAddr">Via di Santa Maria Goretti, 29 - Roma</span>
               </p>
               <div class="timeline-actions">
-                <a href="https://maps.google.com/?q=Chiesa+di+Santa+Maria+Goretti+Via+di+Santa+Maria+Goretti+29+Roma" target="_blank" rel="noopener noreferrer" class="btn-link-map">
+                <a href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+Santa+Maria+Goretti+Roma+Via+di+Santa+Maria+Goretti+29" id="timelineChurchMapLink" target="_blank" rel="noopener noreferrer" class="btn-link-map">
                   <i class="fa-solid fa-location-dot"></i> Mappa Chiesa
                 </a>
               </div>
@@ -162,7 +183,7 @@
               <i class="fa-solid fa-champagne-glasses"></i>
             </div>
             <div class="timeline-card">
-              <div class="timeline-time"><i class="fa-regular fa-clock"></i> Ore 17:30</div>
+              <div class="timeline-time"><i class="fa-regular fa-clock"></i> <span id="timelineReceptionTime">Ore 17:30</span></div>
               <h3 class="timeline-title">Il Ricevimento</h3>
               <p class="timeline-place">
                 <strong id="timelineLocationName">Villa Fravili</strong><br />
@@ -220,8 +241,8 @@
                 <i class="fa-solid fa-church"></i>
               </div>
               <div class="loc-header-text">
-                <span class="loc-type">Cerimonia • Ore 15:00</span>
-                <h3 class="loc-name">Chiesa di Santa Maria Goretti</h3>
+                <span class="loc-type">Cerimonia • <span id="churchTimeDisplay">Ore 15:00</span></span>
+                <h3 class="loc-name" id="churchTitleDisplay">Chiesa di Santa Maria Goretti</h3>
               </div>
             </div>
             <div class="loc-card-body">
@@ -229,7 +250,7 @@
                 <i class="fa-solid fa-location-dot"></i>
                 <div>
                   <strong>Indirizzo</strong>
-                  <p>Via di Santa Maria Goretti, 29 - 00199 Roma (RM)</p>
+                  <p id="churchAddressDisplay">Via di Santa Maria Goretti, 29 - 00199 Roma (RM)</p>
                 </div>
               </div>
 
@@ -244,10 +265,10 @@
               </div>
 
               <div class="loc-card-actions">
-                <a href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+Santa+Maria+Goretti+Roma+Via+di+Santa+Maria+Goretti+29" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <a href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+Santa+Maria+Goretti+Roma+Via+di+Santa+Maria+Goretti+29" id="churchMapsLink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
                   <i class="fa-solid fa-diamond-turn-right"></i> Google Maps
                 </a>
-                <a href="https://waze.com/ul?q=Chiesa%20di%20Santa%20Maria%20Goretti%20Roma" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <a href="https://waze.com/ul?q=Chiesa%20di%20Santa%20Maria%20Goretti%20Roma" id="churchWazeLink" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
                   <i class="fa-brands fa-waze"></i> Waze
                 </a>
               </div>
@@ -261,7 +282,7 @@
                 <i class="fa-solid fa-glass-cheers"></i>
               </div>
               <div class="loc-header-text">
-                <span class="loc-type">Ricevimento • Dalle 17:30</span>
+                <span class="loc-type">Ricevimento • <span id="receptionTimeDisplay">Ore 17:30</span></span>
                 <h3 class="loc-name" id="locationTitleDisplay">Villa Fravili</h3>
               </div>
             </div>
@@ -306,54 +327,78 @@
           <div class="text-center">
             <span class="section-tag">R.S.V.P.</span>
             <h2 class="section-title">Conferma Presenza</h2>
-            <p class="section-subtitle">Vi preghiamo di confermare entro il <strong>15 Febbraio 2027</strong></p>
+            <p class="section-subtitle">Vi preghiamo di confermare entro il <strong id="rsvpDeadlineDisplay">15 Febbraio 2027</strong></p>
             <div class="divider-olive"></div>
           </div>
 
           <form id="rsvpForm" class="rsvp-form" novalidate>
-            <!-- Presenza Toggle Minimal -->
-            <div class="presence-options">
-              <label class="presence-option presence-yes">
-                <input type="radio" name="presence" value="SI" checked required />
-                <div class="presence-box">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span>Sì, ci sarò</span>
-                </div>
-              </label>
-              <label class="presence-option presence-no">
-                <input type="radio" name="presence" value="NO" required />
-                <div class="presence-box">
-                  <i class="fa-solid fa-circle-xmark"></i>
-                  <span>Non potrò esserci</span>
-                </div>
-              </label>
-            </div>
+            <!-- Una scheda per persona: ognuna diventa una riga nel foglio.
+                 Le schede sono create da guestCardTemplate tramite script.js. -->
+            <div class="guest-list" id="guestList"></div>
 
-            <!-- Due campi separati per Nome e Cognome -->
-            <div class="form-row">
-              <div class="form-group">
-                <label for="guestFirstName" class="form-label">Nome <span class="required">*</span></label>
-                <input type="text" id="guestFirstName" name="firstName" class="form-control" placeholder="Es. Mario" required />
-              </div>
-              <div class="form-group">
-                <label for="guestLastName" class="form-label">Cognome <span class="required">*</span></label>
-                <input type="text" id="guestLastName" name="lastName" class="form-control" placeholder="Es. Rossi" required />
-              </div>
-            </div>
+            <button type="button" id="addGuestBtn" class="btn-add-guest">
+              <i class="fa-solid fa-plus"></i> Conferma per un'altra persona
+            </button>
 
-            <!-- Unico campo aperto minimale per intolleranze / allergie / note -->
-            <div class="form-group" id="dietaryNotesGroup">
-              <label for="guestNotes" class="form-label">Allergie, intolleranze o note alimentari</label>
-              <textarea id="guestNotes" name="notes" class="form-control" rows="3" placeholder="Scrivi qui eventuali allergie, intolleranze"></textarea>
-            </div>
-
-            <!-- Submit Button Unico -->
             <div class="form-submit-wrapper">
               <button type="submit" id="rsvpSubmitBtn" class="btn btn-primary btn-block btn-lg">
                 <i class="fa-solid fa-paper-plane"></i> Invia Conferma
               </button>
             </div>
           </form>
+
+          <!-- Modello di scheda persona, clonato da script.js -->
+          <template id="guestCardTemplate">
+            <article class="guest-card" data-guest-card>
+              <div class="guest-head">
+                <button type="button" class="guest-toggle" aria-expanded="true">
+                  <i class="fa-solid fa-chevron-down guest-chevron" aria-hidden="true"></i>
+                  <span class="guest-heading">
+                    <span class="guest-title"></span>
+                    <span class="guest-summary"></span>
+                  </span>
+                </button>
+                <button type="button" class="guest-remove" data-remove title="Rimuovi questa persona">
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+              </div>
+
+              <div class="guest-body">
+                <div class="presence-options">
+                  <label class="presence-option presence-yes">
+                    <input type="radio" value="SI" data-field="presence" checked />
+                    <div class="presence-box">
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span data-label-yes>Ci sarò</span>
+                    </div>
+                  </label>
+                  <label class="presence-option presence-no">
+                    <input type="radio" value="NO" data-field="presence" />
+                    <div class="presence-box">
+                      <i class="fa-solid fa-circle-xmark"></i>
+                      <span data-label-no>Non ci sarò</span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" data-label-for="firstName">Nome <span class="required">*</span></label>
+                    <input type="text" class="form-control" data-field="firstName" placeholder="Es. Mario" autocomplete="off" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" data-label-for="lastName">Cognome <span class="required">*</span></label>
+                    <input type="text" class="form-control" data-field="lastName" placeholder="Es. Rossi" autocomplete="off" />
+                  </div>
+                </div>
+
+                <div class="form-group" data-notes-group>
+                  <label class="form-label" data-label-for="notes">Allergie o intolleranze</label>
+                  <textarea class="form-control" rows="2" data-field="notes" placeholder="Facoltativo"></textarea>
+                </div>
+              </div>
+            </article>
+          </template>
 
           <!-- Success Alert Card -->
           <div id="rsvpSuccessCard" class="rsvp-success-card" style="display: none;">
@@ -368,6 +413,26 @@
               <button type="button" id="rsvpResetViewBtn" class="btn btn-outline btn-sm">
                 Invia un'altra risposta
               </button>
+            </div>
+          </div>
+
+          <!-- Error Card: mostrata se la risposta non e' stata salvata davvero -->
+          <div id="rsvpErrorCard" class="rsvp-success-card" style="display: none;">
+            <div class="success-icon-wrap success-icon-error">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 class="success-title">Non siamo riusciti a salvare la risposta</h3>
+            <p class="success-msg">
+              C'è stato un problema tecnico e la tua conferma <strong>non è stata registrata</strong>.
+              Riprova tra qualche istante oppure scrivici direttamente: ci teniamo a non perdere nessuno!
+            </p>
+            <div class="mt-4 rsvp-error-actions">
+              <button type="button" id="rsvpRetryBtn" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-rotate-right"></i> Riprova
+              </button>
+              <a href="#" id="rsvpFallbackContact" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
+              </a>
             </div>
           </div>
         </div>
@@ -390,7 +455,7 @@
             <div class="iban-card">
               <div class="iban-header">
                 <span class="iban-label"><i class="fa-solid fa-building-columns"></i> Bonifico Bancario</span>
-                <span class="iban-beneficiary">Intestato a: <strong>Marco Linardi</strong></span>
+                <span class="iban-beneficiary">Intestato a: <strong id="ibanBeneficiary">Marco Linardi</strong></span>
               </div>
               <div class="iban-code-row">
                 <code class="iban-code" id="ibanCodeText">IT00 X000 0000 0000 0000 0000 000</code>
@@ -399,7 +464,7 @@
                 </button>
               </div>
               <div class="iban-footer">
-                <span>Causale: <em>Matrimonio Marco ed Elisa</em></span>
+                <span>Causale: <em id="ibanCausale">Matrimonio Marco e Elisa</em></span>
               </div>
             </div>
           </div>
@@ -433,11 +498,17 @@
   <footer class="footer">
     <div class="container text-center">
       <div class="footer-monogram">
-        <span class="script-font footer-names">Marco e Elisa</span>
+        <span class="script-font footer-names" id="footerNames">Marco e Elisa</span>
       </div>
       <p class="footer-date">3 Aprile 2027 • Roma</p>
     </div>
   </footer>
+
+  <!-- Scorciatoia flottante al modulo: compare dopo la copertina e sparisce sull'RSVP -->
+  <a href="#rsvp" class="floating-rsvp" id="floatingRsvpBtn" aria-hidden="true" tabindex="-1">
+    <i class="fa-regular fa-envelope-open"></i>
+    <span>Conferma presenza</span>
+  </a>
 
   <!-- Toast Notification System -->
   <div class="toast-notification" id="toastNotification" role="alert" aria-live="polite">
