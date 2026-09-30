@@ -39,7 +39,7 @@
        Il ?v= serve a forzare il riscaricamento: senza, i browser di chi ha gia'
        visitato il sito continuerebbero a usare la copia salvata in locale.
        ALZARE IL NUMERO a ogni modifica di style.css, script.js o config.js. -->
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
@@ -406,11 +406,11 @@
           <!-- Success Alert Card -->
           <div id="rsvpSuccessCard" class="rsvp-success-card" style="display: none;">
             <div class="success-icon-wrap">
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-check"></i>
             </div>
-            <h3 class="success-title">Grazie!</h3>
+            <h3 class="success-title">Conferma inviata. Grazie!</h3>
             <p class="success-msg" id="successCustomMsg">
-              La tua risposta è stata registrata con successo.
+              Abbiamo registrato la tua risposta.
             </p>
             <div class="mt-4">
               <button type="button" id="rsvpResetViewBtn" class="btn btn-outline btn-sm">
@@ -461,7 +461,7 @@
                 <span class="iban-beneficiary">Intestato a: <strong id="ibanBeneficiary">Marco Linardi</strong></span>
               </div>
               <div class="iban-code-row">
-                <code class="iban-code" id="ibanCodeText">IT38F0367401600008068876811</code>
+                <code class="iban-code" id="ibanCodeText">IT38 F036 7401 6000 0806 8876 811</code>
                 <button type="button" id="copyIbanBtn" class="btn btn-copy" title="Copia IBAN negli appunti">
                   <i class="fa-regular fa-copy"></i> <span id="copyBtnLabel">Copia IBAN</span>
                 </button>
@@ -520,7 +520,7 @@
   </div>
 
   <!-- JavaScript Configuration & Logic -->
-  <script src="config.js?v=3"></script>
-  <script src="script.js?v=3"></script>
+  <script src="config.js?v=4"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

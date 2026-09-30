@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initFloatingRsvp();
 });
 
+/* --- Helper: raggruppa l'IBAN a blocchi di 4 per renderlo leggibile a schermo.
+       Il pulsante "Copia IBAN" toglie di nuovo gli spazi, cosi' il codice
+       incollato nell'home banking resta valido. --- */
+function formattaIban(iban) {
+  if (!iban) return iban;
+  return String(iban).replace(/\s+/g, '').replace(/(.{4})/g, '$1 ').trim();
+}
+
 /* --- Helper: scrive un testo in un elemento solo se entrambi esistono --- */
 function setText(id, value) {
   const el = document.getElementById(id);
@@ -61,7 +69,7 @@ function applyCustomConfig() {
   setAttr('locationIframe', 'src', reception.embedMapUrl);
 
   // Lista nozze / IBAN
-  setText('ibanCodeText', gift.iban);
+  setText('ibanCodeText', formattaIban(gift.iban));
   setText('ibanBeneficiary', gift.beneficiary);
   setText('ibanCausale', gift.causale);
 
@@ -407,24 +415,13 @@ function initRsvpForm() {
     const customMsg = document.getElementById('successCustomMsg');
     if (!customMsg) return;
 
-    const persone = rsvpData.guests || [];
-    const presenti = persone.filter(p => p.presence === 'Presente').length;
-
-    // textContent per il nome: e' testo scritto dall'utente, non va interpretato come HTML
-    customMsg.textContent = '';
-    const nome = document.createElement('strong');
-    nome.textContent = persone[0] ? persone[0].firstName : '';
-
-    if (presenti === 0) {
-      customMsg.append('Grazie ', nome, ' per avercelo comunicato. ',
-        persone.length > 1 ? 'Ci mancherete!' : 'Ci mancherai!');
-    } else if (persone.length === 1) {
-      customMsg.append('Grazie ', nome, '! La tua presenza è confermata con gioia. Ci vediamo il 3 Aprile 2027!');
-    } else {
-      customMsg.append('Grazie ', nome, `! Abbiamo registrato ${persone.length} risposte: `,
-        presenti === 1 ? 'ti aspettiamo' : `vi aspettiamo in ${presenti}`,
-        ' il 3 Aprile 2027. Che gioia!');
-    }
+    // Messaggio volutamente neutro: conferma solo che l'invio e' riuscito.
+    // Unica variazione, il singolare/plurale a seconda di quante persone
+    // sono state registrate nello stesso invio.
+    const persone = (rsvpData.guests || []).length;
+    customMsg.textContent = (persone > 1)
+      ? 'Abbiamo registrato le vostre risposte.'
+      : 'Abbiamo registrato la tua risposta.';
   }
 
   async function submitPayload(rsvpData) {
