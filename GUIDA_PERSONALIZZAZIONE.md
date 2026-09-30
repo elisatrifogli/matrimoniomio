@@ -226,7 +226,7 @@ Versione: **Nuova versione** > **Distribuisci**. L'URL resta lo stesso.
 ## 🌐 5. Pubblicazione
 
 Il sito è già su **GitHub Pages**: ogni `git push` sul branch `main` aggiorna
-<https://elisatrifogli.github.io/matrimoniomio/> nel giro di un paio di minuti.
+<https://marcoelisasposi.com/> nel giro di un paio di minuti.
 
 Con quel link potete generare un **QR Code** da stampare sulle partecipazioni cartacee.
 

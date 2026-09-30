@@ -36,8 +36,8 @@ const WEDDING_CONFIG = {
 
   // Lista Nozze & IBAN
   gift: {
-    beneficiary: "Marco Linardi",              // Nome dell'intestatario del conto
-    iban: "IT00 X000 0000 0000 0000 0000 000", // ⚠️ DA SOSTITUIRE con l'IBAN reale
+    beneficiary: "Marco Linardi",
+    iban: "IT38F0367401600008068876811",
     causale: "Matrimonio Marco e Elisa"
   },
 

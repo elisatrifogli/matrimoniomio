@@ -556,7 +556,9 @@ function initIbanCopy() {
   if (!copyBtn || !ibanCodeEl) return;
 
   copyBtn.addEventListener('click', async () => {
-    const textToCopy = ibanCodeEl.textContent.trim();
+    // Gli spazi servono solo a rendere leggibile l'IBAN a schermo: alcuni
+    // home banking rifiutano il codice se incollato con gli spazi dentro.
+    const textToCopy = ibanCodeEl.textContent.replace(/\s+/g, '');
     try {
       await navigator.clipboard.writeText(textToCopy);
       if (copyLabel) copyLabel.textContent = 'Copiato!';
