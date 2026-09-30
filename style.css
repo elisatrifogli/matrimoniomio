@@ -1124,6 +1124,16 @@ textarea.form-control {
   }
 }
 
+/* Icona SVG in linea: si allinea e si colora come quelle di FontAwesome.
+   Serve per WhatsApp, che altrimenti obbligherebbe a scaricare l'intero
+   font "brands" (117 KB) per una sola icona. */
+.icon-inline {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  flex: 0 0 auto;
+}
+
 /* --- Lista persone del modulo RSVP (una scheda = una riga nel foglio) --- */
 .guest-list {
   display: flex;
